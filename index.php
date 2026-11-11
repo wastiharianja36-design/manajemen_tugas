@@ -329,7 +329,7 @@ if (isset($_POST['login'])) {
     <form></form>
 
     <div class="register-link">
-        Belum punya akun? <a href="daftar.php">Daftar di Sini</a>
+        Belum punya akun? <a href="register.php">Daftar di Sini</a>
     </div>
 
     <div class="credit">
