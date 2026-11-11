@@ -1,14 +1,13 @@
 <?php
 
-$conn = mysqli_connect(
-    "sql102.infinityfreeapp.com", 
-    "if0_43378399",             
-    "Wasti5242451002",     
-    "if0_43378399_db_MPTI"         
-);
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "tugas_mahasiswa";
 
-if(!$conn){
-    die("Koneksi gagal");
+$conn = mysqli_connect($host, $user, $pass, $db);
+
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
 }
-
 ?>
