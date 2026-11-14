@@ -449,7 +449,7 @@ if (isset($_POST['kirim'])) {
                 <option value="Lainnya">Lainnya</option>
             </select>
 
-            <label>Pesan Kritik / Saran</label>
+            <label>Masukan</label>
             <textarea name="pesan" placeholder="Tuliskan saran atau kendala yang kamu temukan saat menggunakan web ini..." required></textarea>
 
             <button type="submit" name="kirim" class="btn-submit">
