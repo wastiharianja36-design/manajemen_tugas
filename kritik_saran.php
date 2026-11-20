@@ -44,7 +44,6 @@ if (isset($_POST['kirim'])) {
 
     <style>
         :root {
-            /* Palet Hijau Biru (Dominan Biru / Deep Cyan) */
             --bg-body: #f0f7f9;
             --primary-dark: #164e63; /* Cyan 900 - Hijau kebiruan gelap (dominan biru) */
             --primary-hover: #083344;
@@ -63,7 +62,6 @@ if (isset($_POST['kirim'])) {
             overflow-x: hidden;
         }
 
-        /* 1. TRANSISI HALAMAN */
         .box {
             background: #ffffff;
             padding: 30px;
@@ -80,7 +78,6 @@ if (isset($_POST['kirim'])) {
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* 2. SIDEBAR DESKTOP (DISAMAKAN) */
         .sidebar {
             width: 230px;
             height: 100vh;
@@ -133,7 +130,6 @@ if (isset($_POST['kirim'])) {
             transform: translateX(4px);
         }
 
-        /* 3. MAIN AREA */
         .main {
             margin-left: 0;
             width: 100%;
@@ -179,7 +175,6 @@ if (isset($_POST['kirim'])) {
             gap: 10px;
         }
 
-        /* FORM ELEMENTS */
         label {
             font-size: 13px;
             font-weight: 600;
@@ -227,7 +222,6 @@ if (isset($_POST['kirim'])) {
         .btn-submit:hover { background: var(--primary-hover); transform: translateY(-2px); }
         .btn-submit:active { transform: scale(0.96); }
 
-        /* ALERT PESAN */
         .sukses {
             background: #dcfce7;
             color: #15803d;
@@ -267,7 +261,6 @@ if (isset($_POST['kirim'])) {
         .credit p { font-size: 11px; margin: 0; }
         .credit h4 { margin-top: 3px; font-size: 12px; color: var(--primary-dark); }
 
-        /* --- 4. BOTTOM NAVIGATION DOCK (ANDROID MOBILE REFINED) --- */
         @media (max-width: 768px) {
             .sidebar {
                 width: 92% !important;
@@ -332,7 +325,6 @@ if (isset($_POST['kirim'])) {
                 font-weight: 700 !important;
             }
 
-            /* Sinar Kerucut Sorot dari Atas ke Bawah Ikon (Spotlight Cone - Warna Biru Neon/Cyan) */
             .sidebar .dock-item.active::before {
                 content: '' !important;
                 position: absolute !important;
@@ -347,7 +339,6 @@ if (isset($_POST['kirim'])) {
                 z-index: 1 !important;
             }
 
-            /* Sumber Lampu LED Neon di Atas Kerucut (Biru Neon/Cyan) */
             .sidebar .dock-item.active::after {
                 content: '' !important;
                 position: absolute !important;
@@ -362,7 +353,6 @@ if (isset($_POST['kirim'])) {
                 z-index: 2 !important;
             }
 
-            /* Animasi Elastis Pill saat Navigasi Ditekan */
             .sidebar .dock-item.bounce-elastic {
                 animation: smoothPillBounce 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
             }
@@ -376,7 +366,6 @@ if (isset($_POST['kirim'])) {
             .btn-toggle { display: none !important; }
         }
 
-        /* KEYFRAME ANIMASI TERLIFT & MEMBAL ELASTIS */
         @keyframes smoothPillBounce {
             0% {
                 transform: scale(0.92) translateY(2px);
@@ -402,18 +391,15 @@ if (isset($_POST['kirim'])) {
 <!-- Glassy Navigation Dock -->
 <div class="sidebar" id="sidebar">
     <h2>Manajemen Tugas</h2>
-    
-    <!-- Item 1: Dashboard -->
+ 
     <a href="dashboard.php" class="dock-item" onclick="picuBounceNav(event, this, 'dashboard.php')">
         <i class="fa-solid fa-house"></i> <span>Dashboard</span>
     </a>
-    
-    <!-- Item 2: Kritik & Saran (ACTIVE) -->
+
     <a href="kritik_saran.php" class="dock-item active" onclick="picuBounceNav(event, this, 'kritik_saran.php')">
         <i class="fa-solid fa-comment-dots"></i> <span>Krisar</span>
     </a>
 
-    <!-- Item 3: Logout -->
     <a href="logout.php" class="dock-item" onclick="picuBounceNav(event, this, 'logout.php')">
         <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
     </a>
@@ -469,9 +455,8 @@ if (isset($_POST['kirim'])) {
         mainContent.classList.toggle('shifted');
     });
 
-    // Pemicu Reaksi Elastis Navigasi Dock
     function picuBounceNav(event, element, tujuan) {
-        // Jika sudah di halaman yang sama, batalkan loading ulang
+
         if (tujuan === 'kritik_saran.php' && window.location.pathname.endsWith('kritik_saran.php')) {
             event.preventDefault();
         } else {

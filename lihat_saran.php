@@ -2,13 +2,11 @@
 session_start();
 include 'koneksi.php';
 
-// Proteksi akses
 if (!isset($_SESSION['login']) || !isset($_SESSION['user_id'])) {
     header("Location: index.php");
     exit;
 }
 
-// Ambil pesan kritik & saran beserta nama pengirimnya
 $query = "SELECT k.*, u.username FROM kritik_saran k 
           JOIN users u ON k.user_id = u.id 
           ORDER BY k.id DESC";
